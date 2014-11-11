@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="0dp"
+                android:id="@+id/imagen_titulo">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="390dp"
+                    android:id="@+id/imagen"
+                    android:layout_gravity="left|top"
+                    android:onClick="entrar"
+                    android:background="@drawable/cuchara"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/titulo"
+                    android:hint="@string/titulo_receta"
+                    android:textSize="30dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_below="@+id/imagen_titulo"
+                android:id="@+id/textos">
+
+                <EditText
+                    android:id="@+id/descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/texto_receta"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/ingredientes"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ingredientes"
+                    android:layout_below="@+id/descripcion"/>
+
+                <EditText
+                    android:id="@+id/cantidad"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:hint="@string/cant_ing"
+                    android:layout_toEndOf="@+id/ingredientes"
+                    android:layout_below="@+id/descripcion"/>
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Switch"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/switch1"
+                    android:layout_below="@+id/ingredientes"
+                    android:layout_toStartOf="@+id/cantidad"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ing_btn"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/btn_ing"
+                    android:layout_below="@+id/cantidad"
+                    android:layout_toEndOf="@+id/ingredientes"
+                    android:layout_alignParentRight="true"/>
+
+                <ListView
+                    android:id="@+id/lista_ingredientes"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/switch1"
+                    android:layout_toStartOf="@+id/switch1"
+                    android:layout_alignParentRight="true"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pasos"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/pasos"
+                    android:layout_alignParentStart="@+id/lista_ingredientes"
+                    android:layout_below="@+id/lista_ingredientes"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pasos_btn"
+                    android:id="@+id/btn_paso"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/pasos"
+                    android:layout_below="@+id/lista_ingredientes"
+                    android:layout_alignParentRight="true"/>
+
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lista_pasos"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/pasos"
+                    android:layout_alignParentStart="@+id/pasos"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/textos"
+                android:layout_gravity="bottom">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crearla"
+                    android:id="@+id/crearla"
+                    android:onClick="crear" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
